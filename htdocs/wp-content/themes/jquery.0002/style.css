@@ -6,70 +6,65 @@ VERSION: .0002
 AUTHORS: The whole team by the end of it probably
 AUTHOR URI: http://jquery.org
 TAGS: jquery, sandbox, microformats, hcard, hatom, xoxo, widgets, blank slate, starter theme, minimalist, developer
-
-*****WARNING*****
-THIS IS NOT THE MOST UPDATED FILE.
-SEE static.origin.jquery.com/api/style.css for that.
-*****************
 */
 
 /*-------------------------------------------------------------------------------
  * jQuery Website Screen Presentation Layer
  * Author: Scott Jehl, scottjehl.com
  * Created: Jan 09
- * Notes: In addition to styling the jquery homepage and interior layouts, this file provides overrides of several other cms stylesheets.
+ * Notes: In addition to styling the jquery homepage and interior layouts, this file provides overrides of several other cms stylesheets. 
 -------------------------------------------------------------------------------*/
 
 body {
-  background: #39414a url(http://static.jquery.com/files/rocker/images/bg-home-tile.jpg) repeat-x 50% 0;
-  font: normal 62.5% "Trebuchet MS", Verdana, Helvetica, Arial,sans-serif;
-  color: #fff;
-  line-height: 1.4;
-  margin: 0px;
-  padding: 0px;
+	background: #39414a url(http://static.jquery.com/files/rocker/images/bg-home-tile.jpg) repeat-x 50% 0;
+	font: normal 62.5% "Trebuchet MS", Verdana, Helvetica, Arial,sans-serif;
+	color: #fff;
+	line-height: 1.4;
+	margin: 0px;
+	padding: 0px;
 }
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Trebuchet MS", Verdana, Helvetica, Arial,sans-serif;
-  margin: 0;
-  padding: 0;
-  letter-spacing: 0;
-  border-bottom: 0;
+	font-family: "Trebuchet MS", Verdana, Helvetica, Arial,sans-serif;
+	margin: 0;
+	padding: 0;
+	letter-spacing: 0;
+	border-bottom: 0;
 }
 a {
-  border-bottom: 0px;
-  color: #5DB0E6;
+	border-bottom: 0px;
+	color: #5DB0E6;
 }
 a:focus {
-  outline: 1px dotted #eee;
+	outline: 1px dotted #eee;
 }
 a:active {
-  outline: 0px;
+	outline: 0px;
 }
 a:hover {
-  color: #7bc4f4;
+	color: #7bc4f4;
 }
 body#jq-interior {
-  background-image: url(http://static.jquery.com/files/rocker/images/bg-interior-tile-drk.jpg);
+	background-image: url(http://static.jquery.com/files/rocker/images/bg-interior-tile-drk.jpg);
 }
 #jq-siteContain {
-  width: 910px;
-  margin: 0 auto;
+	width: 910px;
+	margin: 0 auto;
 }
 #jq-header {
-  /*rockstar removed */
-  height: 156px;
-  padding: 0 40px;
-  position: relative;
+	/*rockstar removed */
+	height: 156px;
+	padding: 0 40px;
+	position: relative;
 }
-body#jq-interior #jq-header {
-  background: none;
-  height: 186px;
+body#jq-interior #jq-header { 
+	background: none;
+	height: 186px;
 }
 #jq-siteLogo {
-  display: block;
-  top: 59px;
-  position: absolute;
-  border: 0;
+	display: block;
+	top: 59px;
+	position: absolute;
+	border: 0;
 }
 #jq-siteLogo img {
 border: 0;
@@ -108,11 +103,11 @@ margin-bottom: 2px;
 border-left: 1px solid #0F1924;
 }
 #jq-primaryNavigation li.jq-current a, #jq-primaryNavigation li.jq-current a:hover {
-  border-bottom: 2px solid #176092;
-  background: #192839;
-  margin-bottom: 0;
-  cursor: default;
-  color: #D0D0D0;
+	border-bottom: 2px solid #176092;
+	background: #192839;
+	margin-bottom: 0;
+	cursor: default;
+	color: #D0D0D0;
 }
 #jq-primaryNavigation li a:hover {
 color: #fff;
@@ -172,25 +167,25 @@ position: absolute;
 display: none;
 }
 #jq-secondaryNavigation li a:hover, #jq-footerNavigation li a:hover {
-  color: #fff;
+	color: #fff;
 }
-#jq-secondaryNavigation li a:hover span.jq-shadow,
+#jq-secondaryNavigation li a:hover span.jq-shadow, 
 #jq-footerNavigation li a:hover  span.jq-shadow,
-#jq-secondaryNavigation li.jq-current a span.jq-shadow,
+#jq-secondaryNavigation li.jq-current a span.jq-shadow, 
 #jq-footerNavigation li.jq-current a span.jq-shadow {
 display: block;
 }
 #jq-header h1 {
-  font-size: 2em;
-  font-weight: normal;
-  color: #ddd;
-  position: absolute;
-  bottom: 15px;
-  left: 60px;
-  line-height: 1;
-  border: 0px;
-  padding: 0px;
-  text-transform: uppercase;
+	font-size: 2em;
+	font-weight: normal;
+	color: #ddd;
+	position: absolute;
+	bottom: 15px;
+	left: 60px;
+	line-height: 1;
+	border: 0px;
+	padding: 0px;
+	text-transform: uppercase;
 }
 #jq-header h1#jq-tagline  {
 position: absolute;
@@ -199,10 +194,10 @@ left: -999999px;
 
 
 div#jq-whosUsing {
-  position: relative;
-  clear: both;
-  height: 45px;
-  background: #131C25;
+	position: relative;
+	clear: both;
+	height: 45px;
+	background: #131C25;
 }
 
 h2.jq-whosUsing {
@@ -303,7 +298,7 @@ border-radius: 10px;
 background: url(http://static.jquery.com/files/rocker/images/icon_searchglass.png) 0 0 no-repeat;
 _background-image: url(http://static.jquery.com/files/rocker/images/icon_searchglass.gif);
 position: relative;
-width: 35px;
+width: 35px; 
 height: 35px;
 position: absolute;
 right: -18px;
@@ -350,8 +345,8 @@ margin-right: .3em;
 position: relative;
 }
 #jq-intro h2 span.jq-jquery span {
-  position: absolute;
-  left: -999999px;
+	position: absolute;
+	left: -999999px;
 }
 #jq-intro p {
 clear: both;
@@ -364,35 +359,35 @@ line-height: 1.6;
 padding: 1.5em 0;
 }
 #jq-intro li {
-  float: left;
-  font-size: 1.4em;
+	float: left;
+	font-size: 1.4em;
 }
 #jq-intro li a {
-  color: #5DB0E6;
-  font-weight: bold;
-  text-decoration: underline;
-  float: left;
-  background: url(http://static.jquery.com/files/rocker/images/icon_check_whiteOnDarkBlue.gif) left no-repeat;
-  padding: 0 30px 0 23px;
+	color: #5DB0E6;
+	font-weight: bold;
+	text-decoration: underline;
+	float: left;
+	background: url(http://static.jquery.com/files/rocker/images/icon_check_whiteOnDarkBlue.gif) left no-repeat;
+	padding: 0 30px 0 23px;
 }
 #jq-intro li p {
-  font-size: .9em;
+	font-size: .9em;
 }
 body.jq-enhanced #jq-intro li {
 position: relative;
 }
 html.js div.jq-checkpointSubhead {
-  display: none;
+	display: none;
 }
 body.jq-enhanced #jq-intro li div.jq-checkpointSubhead {
-  /*opacity: 0.0001;*/
-  position: absolute;
-  width: 253px;
-  height: 54px;
-  background: url(http://static.jquery.com/files/rocker/images/bg_ctaTooltip.png) 0 0 no-repeat;
-  top: -1.5em;
-  left: -35%;
-  z-index: 100;
+	/*opacity: 0.0001;*/
+	position: absolute;
+	width: 253px;
+	height: 54px;
+	background: url(http://static.jquery.com/files/rocker/images/bg_ctaTooltip.png) 0 0 no-repeat;
+	top: -1.5em;
+	left: -35%;
+	z-index: 100;
 }
 body.jq-enhanced #jq-intro li div.jq-checkpointSubhead p{
 font-size: 1em;
@@ -406,31 +401,31 @@ cursor: pointer;
 
 /* #jq-download */
 #jq-download {
-  width: 275px;
-  float: right;
-  background: url(http://static.jquery.com/files/rocker/images/bg_vertGradBox.jpg) top no-repeat;
-  padding: 1.2em 15px;
-  margin-bottom: 3.5em;
+	width: 275px;
+	float: right;
+	background: url(http://static.jquery.com/files/rocker/images/bg_vertGradBox.jpg) top no-repeat;
+	padding: 1.2em 15px;
+	margin-bottom: 3.5em;
 }
 #jq-download h2 {
-  font-size: 1.5em;
-  color: #fff;
-  font-weight: bold;
-  text-transform: uppercase;
-  margin-bottom: 1em;
+	font-size: 1.5em;
+	color: #fff;
+	font-weight: bold;
+	text-transform: uppercase;
+	margin-bottom: 1em;
 }
 #jq-download legend {
-  font-size: 1.2em;
-  color: #fff;
-  font-weight: normal;
-  text-transform: uppercase;
-  padding-bottom: .7em;
+	font-size: 1.2em;
+	color: #fff;
+	font-weight: normal;
+	text-transform: uppercase;
+	padding-bottom: .7em;
 }
 #jq-download div#jq-compression {
-  border: 1px solid #000;
-  background: #333 url(http://static.jquery.com/files/rocker/images/bg_diagonalDarkBlue.gif);
-  padding: .5em 5px;
-  margin-bottom: 1.2em;
+	border: 1px solid #000;
+	background: #333 url(http://static.jquery.com/files/rocker/images/bg_diagonalDarkBlue.gif);
+	padding: .5em 5px;
+	margin-bottom: 1.2em;
 }
 #jq-download div#jq-compression input, #jq-download div#jq-compression a.jq-radioToggle, #jq-download div#jq-compression label {
 float: left;
@@ -469,8 +464,8 @@ position: relative;
 cursor: pointer;
 }
 #jq-download button span {
-  position: absolute;
-  left: -9999999px;
+	position: absolute;
+	left: -9999999px;
 }
 #jq-download button:hover {
 background-position: 0 -49px;
@@ -489,10 +484,10 @@ color: #fff;
 
 /* #jq-learnjQuery */
 #jq-learnjQuery {
-  margin-bottom: 4em;
-  background: url(http://static.jquery.com/files/rocker/images/bg_subtleGrayGrad.gif) top repeat-x;
-  padding: 2em 0 2em 25px;
-  clear: both;
+	margin-bottom: 4em;
+	background: url(http://static.jquery.com/files/rocker/images/bg_subtleGrayGrad.gif) top repeat-x;
+	padding: 2em 0 2em 25px;
+	clear: both;
 }
 #jq-learnNow {
 float: left;
@@ -603,8 +598,8 @@ font-style: italic;
 }
 
 div.jq-gettingStarted, div.jq-devResources {
-  width: 50%;
-  float: left;
+	width: 50%;
+	float: left;
 }
 
 
@@ -616,9 +611,9 @@ width: 305px;
 margin-right: 10px;
 }
 #jq-resources {
-  width: 500px;
-  margin: 0 0 0 10px;
-  float: right;
+	width: 500px;
+	margin: 0 0 0 10px;
+	float: right;
 }
 #jq-books {
 width: 200px;
@@ -636,8 +631,8 @@ margin: 1em 0 1.5em;
 position: relative;
 }
 #jq-resources h2 {
-  margin: 0 0 .4em;
-  background: #353d45;
+	margin: 0 0 .4em;
+	background: #353d45;
 }
 
 #jq-news h2 a.jq-rss {
@@ -659,10 +654,10 @@ line-height: 1.4;
 }
 
 #jq-resources h3, #jq-jobs h3, #jq-news h3, #jq-books h3 {
-  margin: .6em 0;
+	margin: .6em 0;
 }
 #jq-resources h3 {
-  color: #222;
+	color: #222;
 }
 #jq-jobs h2 span.jobsFrom {
 font-size: .85em;
@@ -674,7 +669,7 @@ margin-left: 30px;
  font-style: italic;
 }
 #jq-jobs h2 span.jobsFrom a {
-  color: #fff;
+	color: #fff;
 }
 #jq-resources ul, #jq-jobs ul {
 margin: 0.8em 0pt 2em;
@@ -691,13 +686,13 @@ margin-bottom: .5em;
 #jq-resources li {
 list-style-image: url(http://static.jquery.com/files/rocker/images/icon_bulletDarkBlue.gif);
 }
-#jq-news a,
-#jq-books a,
+#jq-news a, 
+#jq-books a, 
 #jq-jobs a {
 color: #5DB0E6;
 }
-#jq-news a:hover, #jq-news a:visited, #jq-news a:active,
-#jq-books a:hover, #jq-books a:visited, #jq-books a:active,
+#jq-news a:hover, #jq-news a:visited, #jq-news a:active, 
+#jq-books a:hover, #jq-books a:visited, #jq-books a:active, 
 #jq-jobs a:hover, #jq-jobs a:visited, #jq-jobs a:active {
 color: #7bc4f4;
 }
@@ -856,7 +851,7 @@ border-radius: 8px;
 -webkit-border-top-right-radius:    6px;
 border-radius-topleft:              6px;
 border-radius-topright:             6px;
-}
+}                                   
 .roundBottom{
 -moz-border-radius-bottomleft:      6px;
 -moz-border-radius-bottomright:     6px;
@@ -908,13 +903,13 @@ font-weight: bold;
 margin: 1em 0 .6em;
 }
 #jq-primaryContent h2 a {
-  text-decoration: none;
+	text-decoration: none;
 }
 #jq-primaryContent h2 a:hover {
-  text-decoration: underline;
+	text-decoration: underline;
 }
 #ticket h2 {
-  font-size: 1.3em;
+	font-size: 1.3em;
 }
 #jq-primaryContent small {
 font-size: 11px;
@@ -933,7 +928,6 @@ margin: 1em 0 .6em;
 color: #444;
 font-weight: bold;
 }
-
 #jq-primaryContent h5 {
 font-size: 1.1em;
 margin: 1em 0 .6em;
@@ -991,7 +985,7 @@ float: right;
 td.fullrow textarea {
   width: 497px;
 }
-table.listing tbody td,
+table.listing tbody td, 
 table.listing tbody th {
   font-size: 11px;
 }
@@ -1024,7 +1018,7 @@ div.project-issue .quick-search select#edit-states {
 
 /* ----- clear fix for floats ----- */
 .jq-clearfix:after { content: "."; display:block; height:0; clear:both; visibility:hidden; }
-.jq-clearfix { display:inline-block; }
+.jq-clearfix { display:inline-block; }		
 /* hides clearfix from IE-mac \*/
 * html .jq-clearfix { height:1%; }
 .jq-clearfix { display:block; }
@@ -1048,11 +1042,11 @@ div.project-issue .quick-search select#edit-states {
 /* ---------->>> thickbox specific link and font settings <<<------------------------------------------------------*/
 /* ----------------------------------------------------------------------------------------------------------------*/
 #TB_window {
-  color: #333333;
+	color: #333333;
 }
 
 #TB_secondLine {
-  color:#666666;
+	color:#666666;
 }
 
 #TB_window a {color: #666666;}
@@ -1065,20 +1059,20 @@ div.project-issue .quick-search select#edit-states {
 /* ---------->>> thickbox settings <<<-----------------------------------------------------------------------------*/
 /* ----------------------------------------------------------------------------------------------------------------*/
 #TB_overlay {
-  position: fixed;
-  z-index:100;
-  top: 0px;
-  left: 0px;
-  height:100%;
-  width:100%;
+	position: fixed;
+	z-index:100;
+	top: 0px;
+	left: 0px;
+	height:100%;
+	width:100%;
 }
 
 .TB_overlayMacFFBGHack {background: url(http://static.jquery.com/files/rocker/images/macFFBgHack.png) repeat;}
 .TB_overlayBG {
-  background-color:#131D28;
-  filter:alpha(opacity=80);
-  -moz-opacity: 0.80;
-  opacity: 0.80;
+	background-color:#131D28;
+	filter:alpha(opacity=80);
+	-moz-opacity: 0.80;
+	opacity: 0.80;
 }
 
 * html #TB_overlay { /* ie6 hack */
@@ -1087,15 +1081,15 @@ div.project-issue .quick-search select#edit-states {
 }
 
 #TB_window {
-  position: fixed;
-  background: #ffffff;
-  z-index: 102;
-  color:#000000;
-  display:none;
-  border: 2px solid #111;
-  text-align:left;
-  top:50%;
-  left:50%;
+	position: fixed;
+	background: #ffffff;
+	z-index: 102;
+	color:#000000;
+	display:none;
+	border: 2px solid #111;
+	text-align:left;
+	top:50%;
+	left:50%;
 }
 
 * html #TB_window { /* ie6 hack */
@@ -1104,30 +1098,30 @@ margin-top: expression(0 - parseInt(this.offsetHeight / 2) + (TBWindowMargin = d
 }
 
 #TB_window img#TB_Image {
-  display:block;
-  margin: 15px 0 0 15px;
-  border-right: 1px solid #ccc;
-  border-bottom: 1px solid #ccc;
-  border-top: 1px solid #666;
-  border-left: 1px solid #666;
+	display:block;
+	margin: 15px 0 0 15px;
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	border-top: 1px solid #666;
+	border-left: 1px solid #666;
 }
 
 #TB_caption{
-  height:25px;
-  padding:7px 30px 10px 25px;
-  float:left;
+	height:25px;
+	padding:7px 30px 10px 25px;
+	float:left;
 }
 
 #TB_closeWindow{
-  position: absolute;
-  top: 0;
-  right: 0;
+	position: absolute;
+	top: 0;
+	right: 0;
 }
 
 #TB_closeAjaxWindow{
-  position: absolute;
-  top: 0;
-  right: 0;
+	position: absolute;
+	top: 0;
+	right: 0;
 }
 #TB_closeWindowButton {
 float: right;
@@ -1135,53 +1129,53 @@ font-size: 1.3em;
 color: #760000;
 text-transform: uppercase;
 text-decoration: none;
-  font-weight: bold;
-  background: url(http://static.jquery.com/files/rocker/images/icon_closeX.gif) left 50% no-repeat;
-  margin: 7px 15px;
-  padding:0 0 0 15px;
+	font-weight: bold;
+	background: url(http://static.jquery.com/files/rocker/images/icon_closeX.gif) left 50% no-repeat;
+	margin: 7px 15px;
+	padding:0 0 0 15px;
 }
 #TB_ajaxWindowTitle{
-  float:left;
-  padding:7px 0 5px 15px;
-  margin-bottom:1px;
-  font-size: 1.5em;
-  color: #131D28;
-  font-weight: bold;
+	float:left;
+	padding:7px 0 5px 15px;
+	margin-bottom:1px;
+	font-size: 1.5em;
+	color: #131D28;
+	font-weight: bold;
 
 }
 
 #TB_title{
-  background:#fff url(http://static.jquery.com/files/rocker/images/bg_overlay_header.gif) repeat-x top;
-  height:35px;
-  border-bottom: 1px solid #222;
-  position: relative;
+	background:#fff url(http://static.jquery.com/files/rocker/images/bg_overlay_header.gif) repeat-x top;
+	height:35px;
+	border-bottom: 1px solid #222;
+	position: relative;
 }
 
 #TB_ajaxContent{
-  clear:both;
-  padding:2px 15px 15px 15px;
-  overflow:auto;
-  text-align:left;
-  line-height:1.4em;
+	clear:both;
+	padding:2px 15px 15px 15px;
+	overflow:auto;
+	text-align:left;
+	line-height:1.4em;
 }
 
 #TB_ajaxContent.TB_modal{
-  padding:15px;
+	padding:15px;
 }
 
 #TB_ajaxContent p{
-  padding:5px 0px 5px 0px;
+	padding:5px 0px 5px 0px;
 }
 
 #TB_load{
-  position: fixed;
-  display:none;
-  height:31px;
-  width:31px;
-  z-index:103;
-  top: 50%;
-  left: 50%;
-  margin: -16px 0 0 -16px; /* -height/2 0 0 -width/2 */
+	position: fixed;
+	display:none;
+	height:31px;
+	width:31px;
+	z-index:103;
+	top: 50%;
+	left: 50%;
+	margin: -16px 0 0 -16px; /* -height/2 0 0 -width/2 */
 }
 
 * html #TB_load { /* ie6 hack */
@@ -1190,17 +1184,17 @@ margin-top: expression(0 - parseInt(this.jq-offsetHeight / 2) + (TBWindowMargin 
 }
 
 #TB_HideSelect{
-  z-index:99;
-  position:fixed;
-  top: 0;
-  left: 0;
-  background-color:#fff;
-  border:none;
-  filter:alpha(opacity=0);
-  -moz-opacity: 0;
-  opacity: 0;
-  height:100%;
-  width:100%;
+	z-index:99;
+	position:fixed;
+	top: 0;
+	left: 0;
+	background-color:#fff;
+	border:none;
+	filter:alpha(opacity=0);
+	-moz-opacity: 0;
+	opacity: 0;
+	height:100%;
+	width:100%;
 }
 
 * html #TB_HideSelect { /* ie6 hack */
@@ -1209,11 +1203,11 @@ margin-top: expression(0 - parseInt(this.jq-offsetHeight / 2) + (TBWindowMargin 
 }
 
 #TB_iframeContent{
-  clear:both;
-  border:none;
-  margin-bottom:-1px;
-  margin-top:1px;
-  _margin-bottom:1px;
+	clear:both;
+	border:none;
+	margin-bottom:-1px;
+	margin-top:1px;
+	_margin-bottom:1px;
 }
 
 #docs-content {
@@ -1236,15 +1230,14 @@ color: #06263C;
 }
 
 ul.comment-instructions {
-  border: 1px solid #ccc;
-  padding: 5px;
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
-  margin: .8em 0 1.2em;
-  background-color: #fdd;
+	border: 1px solid #ccc;
+	padding: 5px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	margin: .8em 0 1.2em;
+	background-color: #fdd;
 }
-
 
 #column-content {
 font-size: 130%;
@@ -1295,7 +1288,7 @@ font-size: 100%;
 }
 
 #content h1 {
-  padding-top: 0.5em;
+	padding-top: 0.5em;
 }
 
 #content .archive-meta p{
@@ -1327,34 +1320,26 @@ html.js #jq-download input {
   border-left: 1px solid #aaa;
   border-top: 1px solid #aaa;
 }
-.api-jquery-com .toc{
+.api-jquery-com fieldset.toc{
   padding: 5px 20px 20px 20px;
   background: #fafafa;
   border-right: 1px solid #aaa;
   border-left: 1px solid #aaa;
   border-bottom: 1px solid #aaa;
-/*  margin: -26px 0 0 0;*/
+  margin: -26px 0 0 0;
 }
-#jq-primaryContent .toc h4 {
-  font-size:1.45em;
-  margin: 0;
-  padding: 0 0 6px;
-  font-weight: normal;
-  border: none;
-  margin-top: -32px;
-}
-#jq-primaryContent .b-wrap .toc h4 {
-  margin-top: 0;
-}
-#jq-primaryContent .toc h4 span {
+#jq-primaryContent fieldset.toc legend{
+  font-size:1.4em;
+  padding:0px;
   background: #fff;
+  border: none;
 }
-.api-jquery-com .toc ul.toc-list li a{
+.api-jquery-com fieldset.toc ul.toc-list li a{
   line-height: 1.1;
   background: url(images/down-arrow.png) no-repeat 0px 5px;
-  padding: 0 0 0 13px;
+  padding: 0 0 0 13px; 
 }
-.api-jquery-com .toc ul.toc-list ul li a{
+.api-jquery-com fieldset.toc ul.toc-list ul li a{
   background: url(images/down-arrow.png) no-repeat 0px 3px;
 }
 .api-jquery-com #jq-primaryContent p.image {
@@ -1365,36 +1350,35 @@ html.js #jq-download input {
   border: 2px solid #E2E1D5;
 }
 .api-jquery-com #jq-primaryContent p.image img {
-  vertical-align: top;
+  vertical-align: top;  
 }
 .api-jquery-com #jq-primaryContent .four-across img {
   width: 120px;
 }
 
-.api-jquery-com #jq-primaryContent .toc ul.toc-list a{
+.api-jquery-com #jq-primaryContent fieldset.toc ul.toc-list a{
   font-size: 1.4em;
   color: #444444;
   text-decoration: none;
 }
-.api-jquery-com #jq-primaryContent .toc ul.toc-list a span.desc{
+.api-jquery-com #jq-primaryContent fieldset.toc ul.toc-list a span.desc{
   font-size: .8em;
   font-style: italic;
 }
-.api-jquery-com #jq-primaryContent .toc ul.toc-list li ul li a{
+.api-jquery-com #jq-primaryContent fieldset.toc ul.toc-list li ul li a{
   font-size: 1em;
 }
 
-.api-jquery-com .toc ul.toc-list ul{
+.api-jquery-com fieldset.toc ul.toc-list ul{
   margin-left: 2em;
 }
-.api-jquery-com #jq-primaryContent .toc ul.toc-list ul li{
+.api-jquery-com #jq-primaryContent fieldset.toc ul.toc-list ul li{
   font-size: .9em;
   margin-top: 3px;
   margin-bottom: 3px;
 }
 
-.api-jquery-com .entry .longdesc,
-.api-jquery-com .entry .download{
+.api-jquery-com .entry .longdesc{
   padding: 0 20px
 }
 
@@ -1444,17 +1428,11 @@ html.js #jq-download input {
   margin: 0.5em 0 0 0;
 }
 .api-jquery-com #jq-interiorNavigation ul li ul.children{
-  margin-left: 15px;
-}
-.api-jquery-com #jq-interiorNavigation span.plus {
-  display: block;
-  float: left;
-  width: 15px;
-  text-align: center;
-  margin-left: -10px;
+  margin-left: 1em;
+
 }
 .api-jquery-com #jq-interiorNavigation #categories a:focus {
-  outline: none
+	outline: none
 }
 .api-jquery-com code{
   background-color: #eee;
@@ -1473,7 +1451,7 @@ html.js #jq-download input {
   margin: 0 0 6px 0;
   padding: 0 0 0px 0;
   border-bottom: 1px solid #BBBBBB;
-
+  
 }
 
 .api-jquery-com #jq-primaryContent h1.category-title {
@@ -1493,36 +1471,19 @@ html.js #jq-download input {
   top:-6px;
   width:591px;
 }
-.api-jquery-com #jq-primaryContent #method-list li a.title-link,
-.api-jquery-com #jq-primaryContent .method-list li a.title-link {
+.api-jquery-com #jq-primaryContent #method-list li a.title-link{
   padding: 0px;
 }
-.api-jquery-com ul.plugin-name-list {
-  padding: 1em 10px;
-  font-size: 1.5em;
-  font-weight: bold;
-}
-
 /*
 .api-jquery-com #jq-primaryContent #method-list li a.title-link:hover {
   background: #ddd;
 }
 */
-
-.api-jquery-com #jq-primaryContent h2.plugin-header {
-  margin: -5px -10px;
-  padding: .3em 1em;
-  color: #0d5995;
-  font-size: 2.3em;
-  font-style: italic;
-}
-.api-jquery-com #jq-primaryContent #method-list li,
-.api-jquery-com #jq-primaryContent .method-list li {
+.api-jquery-com #jq-primaryContent #method-list li {
   padding: 10px;
   border-bottom: 1px solid #EEEEEE;
 }
-.api-jquery-com #jq-primaryContent #method-list li li,
-.api-jquery-com #jq-primaryContent .method-list li li {
+.api-jquery-com #jq-primaryContent #method-list li li{
   border-bottom: none;
 }
 li.withfocus{
@@ -1536,8 +1497,7 @@ li.withfocus{
   box-shadow:         0px 0px 6px #6fa1d9;
 }
 li.withoutfocus{background: none}
-.api-jquery-com #jq-primaryContent #method-list li h2,
-.api-jquery-com #jq-primaryContent .method-list li h2 {
+.api-jquery-com #jq-primaryContent #method-list li h2{
 display: inline;
 margin: 0
 }
@@ -1551,8 +1511,7 @@ margin: 0
 }
 
 
-.api-jquery-com #jq-primaryContent #method-list li p,
-.api-jquery-com #jq-primaryContent .method-list li p{
+.api-jquery-com #jq-primaryContent #method-list li p{
 padding: 0;
 margin: 0;
 font-size: 1em;
@@ -1560,24 +1519,7 @@ clear: both;
 font-style: italic;
 }
 
-.api-jquery-com .banner {
-  float: left;
-  width: 50%;
-  text-align: left;
-  color: #900;
-  font-weight: bold;
-  font-size: 1.1em;
-}
-.api-jquery-com .entry-details .beta,
-.api-jquery-com .method-list .beta {
-  margin-right: 4px;
-  padding: 1px 3px;
-  color: #fff;
-  background-color: #900;
-}
-.beta[title] {
-  cursor: help;
-}
+
 .api-jquery-com #jq-primaryContent div.entry-meta{
   text-align: right;
   margin: 5px;
@@ -1621,6 +1563,8 @@ font-style: italic;
 .api-jquery-com #jq-primaryContent ol {
   list-style-type: decimal;
   padding-left: 2em;
+}
+.api-jquery-com #jq-primaryContent ol li {
   font-size: 1.2em;
 }
 
@@ -1650,25 +1594,16 @@ padding: 0 1px;
 }
 
 .api-jquery-com #jq-primaryContent div.longdesc ul {
-/*  margin: 0 3em;*/
-font-size: 1.2em;
-padding-left: 1.3em;
-list-style: disc outside none;
+  margin: 0 3em;
+  list-style: disc outside none;
 }
-.api-jquery-com #jq-primaryContent div.longdesc ul li {
-  font-size: 1em;
-}
-.api-jquery-com #jq-primaryContent div.longdesc h4 {
+
+.api-jquery-com #jq-primaryContent div.longdesc h4{
   color:#555;
   font-size:1.8em;
   font-style:italic;
   font-weight:normal;
   margin:1.5em 0 0;
-}
-.api-jquery-com #jq-primaryContent div.longdesc h4 a.stub {
-  font-size: .8em;
-  padding-right: .4em;
-  text-decoration: none;
 }
 .api-jquery-com #jq-primaryContent div.entry-examples h4{
   color:#555;
@@ -1702,11 +1637,7 @@ margin-bottom: 1em
 .api-jquery-com #jq-primaryContent .signature ol{
   color: #808080
 }
-.api-jquery-com .signatures dt {
-  font-weight: bold;
-  float: left;
-  padding-right: .7em;
-}
+
 .api-jquery-com #jq-primaryContent .signature ol.arguments li.argument h4, .api-jquery-com #jq-primaryContent .signature ol.arguments li.argument p{
   display: inline;
 }
@@ -1754,17 +1685,7 @@ ul.categories{
   -moz-border-radius: 2px;
   border-radius: 2px;
 }
-.api-jquery-com .entry .download {
-  margin: 1em 19px;
-  border: 1px solid #e2e1d5;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
-  font-size: 1.1em;
-}
-.api-jquery-com .entry .download a {
-  white-space: nowrap;
-}
+
 .api-jquery-com #jq-content table {
   font-size: 1.1em;
   margin-bottom: 1em;
@@ -1775,10 +1696,6 @@ ul.categories{
 .api-jquery-com #jq-content th,
 .api-jquery-com #jq-content td {
   padding: 3px 6px;
-}
-.api-jquery-com #jq-primaryContent abbr {
-  cursor: help;
-  border-bottom: 1px dotted #999;
 }
 .api-jquery-com #jq-primaryContent .options {
   padding: 4px 0 0 10px;
@@ -1794,62 +1711,13 @@ ul.categories{
   color: #666;
 }
 .api-jquery-com #jq-primaryContent .options h5 span {
+  float: right;
   color: #666;
   font-size: 0.8em;
-  margin-left: 3px;
-}
-.api-jquery-com #jq-primaryContent .options h5 span.type {
-  float: right;
 }
 .api-jquery-com #jq-primaryContent .options p {
   font-size: 1.1em;
 }
-
-.api-jquery-com #jq-primaryContent .dsq-comment-message pre,
-.api-jquery-com #jq-primaryContent .dsq-comment-message pre code {
-  font-size: 1em;
-}
-.api-jquery-com #rpt-issue fieldset {
-  margin-top: 1.2em;
-}
-.api-jquery-com #rpt-issue label,
-.api-jquery-com #rpt-issue input {
-  display: block;
-  width: 225px;
-}
-.api-jquery-com #rpt-issue textarea {
-  display: block;
-  width: 400px;
-  height: 140px;
-}
-.api-jquery-com #rpt-issue div {
-  font-size: 1.2em;
-  line-height: 1.3em;
-  margin-bottom: 1.5em;
-}
-.api-jquery-com #rpt-issue .error {
-  color: #900;
-}
-.api-jquery-com #rpt-issue .error label {
-  font-weight: bold;
-}
-.api-jquery-com #jq-primaryContent .error-summary {
-  margin-top: 20px;
-  padding: .5em;
-  font-weight: bold;
-  color: #900;
-  background-color: #ffe3e3;
-  border: 1px solid #900;
-}
-
-.api-jquery-com #jq-primaryContent .success-summary {
-  margin-top: 20px;
-  padding: .5em;
-  color: #070;
-  background-color: #e3ffe3;
-  border: 1px solid #070;
-}
-
 #disqus_thread {
 margin-bottom:32px !important;
 }

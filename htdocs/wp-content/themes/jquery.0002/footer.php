@@ -27,8 +27,9 @@ ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www')
 
 <?php if (is_single()): ?>
 <?php wp_footer() ?>
-<!-- <script src="/wp-content/themes/jquery.0002/demos.js?v=20100124" type="text/javascript"></script> -->
-  <script src="http://static.jquery.com/api/demo.js" type="text/javascript"></script>
+  <script src="http://static.jquery.com/api/prettify.js"></script>
+  <!-- <script src="/wp-content/themes/jquery.0002/demos.js?v=20110228"></script> -->
+  <script src="http://static.jquery.com/api/demo.js?v=20110228"></script>
 <?php endif; ?>
 </body>
 </html>

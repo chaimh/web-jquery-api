@@ -93,6 +93,8 @@ echo '<?xml version="1.0" ?>';
       <category name="Version 1.4.3"/>
       <category name="Version 1.4.4"/>
       <category name="Version 1.5"/>
+      <category name="Version 1.5.1"/>
+      <category name="Version 1.6"/>
     </category>
   </categories>
   <?php
@@ -112,15 +114,30 @@ echo '<?xml version="1.0" ?>';
 
     $notes_output = '';
     if ( function_exists('get_reus') ):
-      $reus_title = 'title=' . $post->post_title;
+      $reus_vars = 'title=' . $post->post_title;
       $notes = array(
         'additional' => get_post_meta($post->ID, 'Note'),
         'banner' => get_post_meta($post->ID, 'Banner')
       );
+      $notes_meta = get_post_meta($post->ID, 'Notemeta');
+
+      if ( !empty($notes_meta) ) {
+        foreach ($notes_meta as $meta) {
+          $meta_parts = explode('=', $meta);
+          $meta_key = array_shift($meta_parts);
+          $meta_val = implode('=', $meta_parts);
+          $meta = $meta_key . '=' . str_replace('=', '%3D', $meta_val);
+
+          $reus_vars .= '&' . $meta;
+        }
+      }
+
       foreach ($notes as $key => $values):
         if ( !empty($values) ) {
           foreach ($values as $val):
-            $notes_output .= '<note type="' . $key . '">' . get_reus($val, $reus_title) . '</note>';
+            $note = get_reus($val, $reus_vars);
+            $note = str_replace('%3D', '=', $note);
+            $notes_output .= '<note type="' . $key . '">' . $note . '</note>';
           endforeach;
         }
       endforeach;

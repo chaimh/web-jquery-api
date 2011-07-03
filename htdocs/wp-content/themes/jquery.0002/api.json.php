@@ -4,6 +4,7 @@ Template Name: JSON Api
 */
 ?>
 <?php
+$debug = false;
 $apivars = array();
 
 if (isset($_GET)):
@@ -30,17 +31,19 @@ foreach($posts as $post) :
     $catparents = get_category_parents($category->term_id, false, ' &gt; ');
     $cats[] = substr($catparents, 0, -6);
   endforeach;
-  $catslugs = implode(', ', $cats);
+  $catslugs = implode(',', $cats);
 
   if ( @$apivars['version'] && strpos($catslugs, @$apivars['version']) === false ):
     continue;
   endif;
   $cats = '<categories>' . $catslugs . '</categories>';
+
   $theContent = preg_replace("!</?entries>!", "", $theContent);
-  preg_replace("!</entry>!", "$cats</entry>", $theContent);
+  // preg_replace("!</entry>!", $cats . '</entry>', $theContent);
 
   $entrymeta = '$1><slug>$2' . '</slug><title>' . $post->post_title . '</title>';
   $entrymeta .= '<url>' . get_permalink() . '</url>';
+  $entrymeta .= $cats;
   $theContent = preg_replace('@(<entry[^>]*?)name="([^"]+)"[^>]*>@', $entrymeta, $theContent);
 
   if ( ks_in_plugins_category() ):
@@ -81,10 +84,10 @@ foreach ($xml->entries->entry as $entrytemp) {
   $title = (string)$entry->title[0];
   $slug = (string)$entry->slug[0];
   $url = (string)$entry->url[0];
+  $entrycats = (string)$entry->categories[0];
 
   $sigs = array();
   foreach ($entry->signature as $sig) {
-
     $args = array();
     foreach ($sig->argument as $arg) {
       $argparams = $arg->attributes();
@@ -113,10 +116,7 @@ foreach ($xml->entries->entry as $entrytemp) {
       if ( count($opts) ) {
         $currentSig['options'] = $opts;
       }
-    }
-    $props = build_options($sig->property);
-    if ( count($props) ) {
-      $currentSig['properties'] = $props;
+
     }
 
     $sigs[] = $currentSig;
@@ -130,8 +130,8 @@ foreach ($xml->entries->entry as $entrytemp) {
     'signatures' => $sigs,
     'desc' => inner_html($entry, 'desc'),
     'longdesc' => inner_html($entry, 'longdesc'),
+    'categories' => explode(',', $entrycats),
     'download' => inner_html($entry, 'download'),
-
   );
 
   if ( (string)$attrs['return'] ) {
@@ -146,7 +146,11 @@ foreach ($xml->entries->entry as $entrytemp) {
   $json_api = json_encode($api);
   $callback = isset($_GET['callback']) ? $_GET['callback'] : false;
 
-  if ($callback):
+  if ($debug):
+    echo '<pre>';
+    print_r($api);
+    echo '</pre>';
+  elseif ($callback):
     header ("Content-Type: text/javascript; charset=UTF-8");
     echo $callback . '(' . $json_api . ')';
 
@@ -176,12 +180,12 @@ function build_options($options) {
   $opts = array();
   foreach ($options as $opt) {
     $optparams = $opt->attributes();
-    $op = array();
-    foreach ($optparams as $key => $value) {
-      $op[$key] = (string)$optparams[$key][0];
-    }
-    $op['desc'] = preg_replace( $descpattern, '', $opt->desc->asXml() );
-    $opts[] = $op;
+    $opts[] = array(
+      'name' => (string)$optparams['name'][0],
+      'type' => (string)$optparams['type'][0],
+      'default' => (string)$optparams['default'][0],
+      'desc' => preg_replace( $descpattern, '', $opt->desc->asXml() ),
+    );
   }
   return $opts;
 }

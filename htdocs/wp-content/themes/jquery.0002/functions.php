@@ -113,13 +113,10 @@ function ks_api_report( $fields ) {
       $response['status'] = 'success';
       $response['msg'] = '<p class="success-summary">Thanks for your report. We\'ll take a look and try to rectify the situation as soon as possible.</p>';
 
-      if (get_magic_quotes_gpc()) {
-        array_walk_recursive($fields, 'ks_stripslashes_gpc');
-      }
 
       $email = filter_var( $fields['email'], FILTER_SANITIZE_EMAIL );
       $fullname = filter_var( $fields['fullname'], FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH );
-      $comment = $fields['api_comment'];
+      $comment = stripslashes( $fields['api_comment'] );
 
       $subj = strip_tags($fields['api_title']);
       // send email

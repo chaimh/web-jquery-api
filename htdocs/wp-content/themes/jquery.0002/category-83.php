@@ -19,20 +19,20 @@ $sorted_list = array(
 );
 
 ?>
-<div id="jq-primaryContent" class="jq-box round">
-  <h1 class="page-title"><?php single_cat_title() ?></h1>
-  <div id="content">
-    <?php
-  if (function_exists('ks_term_description')) :
-  $categorydesc = ks_term_description();
-  else :
-  $categorydesc = category_description();
-  endif;
+  <div id="jq-primaryContent" class="jq-box round">
+    <h1 class="page-title"><?php single_cat_title() ?></h1>
+    <div id="content">
+      <?php
+      if (function_exists('ks_term_description')) :
+        $categorydesc = ks_term_description();
+      else :
+        $categorydesc = category_description();
+      endif;
 
-  if ( !empty($categorydesc) ) {
-    echo apply_filters( 'archive_meta', '<br/><div class="archive-meta">' . $categorydesc . '</div>' );
-  }
-  ?>
+      if ( !empty($categorydesc) ) {
+        echo apply_filters( 'archive_meta', '<br/><div class="archive-meta">' . $categorydesc . '</div>' );
+      }
+      ?>
 
   <?php
   $pageposts = $wpdb->get_results("SELECT *, REPLACE(post_name, 'jQuery.', '') as trimname FROM wp_posts as p, wp_term_taxonomy as tt, wp_term_relationships as t WHERE p.post_status='publish' AND p.post_type = 'post' AND p.post_date < NOW() AND (tt.term_taxonomy_id=$cat AND t.term_taxonomy_id=$cat OR tt.parent=$cat AND t.term_taxonomy_id=tt.term_taxonomy_id) AND t.object_id=p.ID ORDER BY trimname;");

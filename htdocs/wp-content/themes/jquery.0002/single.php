@@ -73,13 +73,27 @@ if ($html = $xp->transformToXML($xml_doc)) {
   $htmlparts = explode('<h3>Example', $html);
   $firstpart = array_shift($htmlparts);
 
-  $meta_values = get_post_meta($post->ID, 'Note');
+  $meta_values = get_post_meta($post->ID, 'Notemeta');
+  $note_values = get_post_meta($post->ID, 'Note');
+  $reus_vars = $reus_title;
   $notes = '';
-  if (!empty($meta_values) && function_exists('get_reus')) :
-    $notes .= '<ul>';
-    foreach ($meta_values as $value) {
-      $note = get_reus($value, $reus_title);
+  if (!empty($note_values) && function_exists('get_reus')) :
 
+    if ( !empty($meta_values) ):
+      foreach ($meta_values as $meta) {
+        $meta_parts = explode('=', $meta);
+        $meta_key = array_shift($meta_parts);
+        $meta_val = implode('=', $meta_parts);
+        $meta = $meta_key . '=' . str_replace('=', '%3D', $meta_val);
+
+        $reus_vars .= '&' . $meta;
+      }
+    endif;
+
+    $notes .= '<ul>';
+    foreach ($note_values as $value) {
+      $note = get_reus($value, $reus_vars);
+      $note = str_replace('%3D', '=', $note);
       $notes .= '<li>' .  $note . '</li>';
     }
     $notes .= '</ul>';

@@ -124,4 +124,4 @@ foreach ( $comments as $comment )
         </div><!-- #respond -->
 <?php endif // REFERENCE: if ( 'open' == $post->comment_status ) ?>
 
-  </div><!-- #comment wrapper -->
+    </div><!-- #comment wrapper -->

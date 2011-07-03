@@ -26,17 +26,18 @@
     <xsl:for-each select="//entry">
       <xsl:variable name="entry-name" select="@name" />
       <xsl:variable name="entry-name-trans" select="translate($entry-name,'$., ()/{}','s---')" />
-
+      <xsl:variable name="arg-num" select="count(signature[1]/argument)" />
       <li>
         <a href="#{concat($entry-name-trans,position())}">
         <xsl:value-of select="@name" /><xsl:if test="@type='method'">(<xsl:if test="signature/argument"><xsl:text> </xsl:text>
           <xsl:for-each select="signature[1]/argument">
-            <xsl:if test="position() &gt; 1">
-              <xsl:text>, </xsl:text>
-            </xsl:if>
             <xsl:if test="@optional">[<xsl:text>&#160;</xsl:text></xsl:if>
-                <xsl:value-of select="@name" />
+            <xsl:value-of select="@name" />
+            <xsl:if test="position() &lt; $arg-num">
+              <xsl:text>,</xsl:text>
+            </xsl:if>
             <xsl:if test="@optional"><xsl:text>&#160;</xsl:text>]</xsl:if>
+            <xsl:text> </xsl:text>
             </xsl:for-each>
         <xsl:text>&#160;</xsl:text></xsl:if>)</xsl:if>
           <xsl:text> </xsl:text>
@@ -46,14 +47,17 @@
           <ul>
             <xsl:for-each select="signature">
               <li>
+                <xsl:variable name="method-sig-arg-num" select="count(argument)" />
+
                   <xsl:if test="not(contains($entry-name, '.')) and $entry-name != 'jQuery'">.</xsl:if><xsl:value-of select="$entry-name" />(<xsl:if test="argument"><xsl:text> </xsl:text>
                     <xsl:for-each select="argument">
-                      <xsl:if test="position() &gt; 1">
-                        <xsl:text>, </xsl:text>
-                      </xsl:if>
-                    <xsl:if test="@optional">[ </xsl:if>
+                    <xsl:if test="@optional"> [</xsl:if>
                       <xsl:value-of select="@name" />
-                    <xsl:if test="@optional"> ]</xsl:if>
+                      <xsl:if test="position() &lt; $method-sig-arg-num">
+                        <xsl:text>,</xsl:text>
+                      </xsl:if>
+
+                    <xsl:if test="@optional">] </xsl:if>
                     </xsl:for-each><xsl:text> </xsl:text></xsl:if>)
               </li>
             </xsl:for-each>
@@ -95,13 +99,15 @@
         <xsl:when test="$entry-type='method'"><xsl:if test="not(contains($entry-name, '.')) and not(contains($entry-name, '{')) and $entry-name != 'jQuery'">.</xsl:if></xsl:when>
       </xsl:choose>
       <xsl:value-of select="@name" /><xsl:if test="@type='method'">(<xsl:if test="signature/argument"><xsl:text> </xsl:text>
+      <xsl:variable name="sig-arg-num" select="count(signature[1]/argument)" />
+
       <xsl:for-each select="signature[1]/argument">
-        <xsl:if test="position() &gt; 1">
-          <xsl:text>, </xsl:text>
-        </xsl:if>
-        <xsl:if test="@optional">[ </xsl:if>
+        <xsl:if test="@optional"> [</xsl:if>
         <xsl:value-of select="@name" />
-        <xsl:if test="@optional"> ]</xsl:if>
+        <xsl:if test="position() &lt; $sig-arg-num">
+          <xsl:text>,</xsl:text>
+        </xsl:if>
+        <xsl:if test="@optional">] </xsl:if>
       </xsl:for-each>
       <xsl:text> </xsl:text></xsl:if>)</xsl:if>
     </span>
@@ -158,13 +164,16 @@
               <h4 class="name">
                 <span class="versionAdded">version added: <a href="/category/version/{added}/"><xsl:value-of select="added" /></a></span>
                 <xsl:if test="$entry-type='method'"><xsl:if test="not(contains($entry-name, '.')) and $entry-name != 'jQuery'">.</xsl:if></xsl:if><xsl:value-of select="$entry-name" /><xsl:if test="$entry-type='method'">(<xsl:if test="argument"><xsl:text> </xsl:text>
+                <xsl:variable name="desc-arg-num" select="count(argument)" />
+
                   <xsl:for-each select="argument">
-                    <xsl:if test="position() &gt; 1">
-                      <xsl:text>, </xsl:text>
+                    <xsl:if test="@optional"> [</xsl:if>
+                    <xsl:value-of select="@name" />
+                    <xsl:if test="position() &lt; $desc-arg-num">
+                      <xsl:text>,</xsl:text>
+                      <xsl:if test="not(@optional)"><xsl:text> </xsl:text></xsl:if>
                     </xsl:if>
-                    <xsl:if test="@optional">[ </xsl:if>
-                        <xsl:value-of select="@name" />
-                    <xsl:if test="@optional"> ]</xsl:if>
+                    <xsl:if test="@optional">] </xsl:if>
                   </xsl:for-each>
                 <xsl:text> </xsl:text></xsl:if>)</xsl:if>
               </h4>
@@ -221,7 +230,7 @@
             <xsl:value-of select="position() - 1"/>
           </xsl:attribute>
           <h4><xsl:if test="$number-examples &gt; 1">Example: </xsl:if><span class="desc"><xsl:value-of select="desc" /></span></h4>
-  <pre><code><xsl:choose>
+  <pre class="prettyprint"><code><xsl:choose>
             <xsl:when test="html"><xsl:attribute name="class">example demo-code</xsl:attribute>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;<xsl:if test="css/text()">
@@ -232,7 +241,7 @@
   &lt;script src="<xsl:value-of select="@src" />"&gt;&lt;/script&gt;</xsl:for-each>
   </xsl:when>
   <xsl:otherwise>
-  &lt;script src="http://code.jquery.com/jquery-1.5.js"&gt;&lt;/script&gt;</xsl:otherwise></xsl:choose><xsl:if test="code/@location='head'">
+  &lt;script src="http://code.jquery.com/jquery-latest.js"&gt;&lt;/script&gt;</xsl:otherwise></xsl:choose><xsl:if test="code/@location='head'">
   &lt;script&gt;
   <xsl:copy-of select="code/text()" />
   &lt;/script&gt;

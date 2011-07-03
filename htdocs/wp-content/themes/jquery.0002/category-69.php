@@ -50,7 +50,7 @@ if ($pageposts):
       $othercats .= ' | <span><a href="' . get_edit_post_link( $post->ID)  . '">Edit</a></span>';
       $othercats .= '</span></span>';
 
-    	if ( $pos !== false ) {
+      if ( $pos !== false ) {
         $matches = array();
         preg_match_all("/<added>([^<]+)</", $content, $matches);
         $maxVersion = max($matches[1]);
@@ -75,8 +75,8 @@ if ($pageposts):
   </ul>
   <?php
 endif; ?>
-  </div><!-- #content -->
-</div><!-- #jq-primaryContent -->
+    </div><!-- #content -->
+  </div><!-- #jq-primaryContent -->
 
 <?php get_sidebar() ?>
 <?php get_footer() ?>
