@@ -119,8 +119,9 @@ function ks_api_report( $fields ) {
       $comment = stripslashes( $fields['api_comment'] );
 
       $subj = strip_tags($fields['api_title']);
+
       // send email
-      if ($subj != 'SUBJ1'):
+      if ( ks_spammed($subj, $comment) < 50 ):
         $msg = 'Submitted: ' . htmlspecialchars($fields['date']);
         $msg .= "\n";
         $msg .= 'From: ' . $email . ' (' . $fullname  . ')';
@@ -131,11 +132,26 @@ function ks_api_report( $fields ) {
         $msg .= "\n\n";
         mail( 'kswedberg@gmail.com', $subj, $msg, 'From: jQuery API Bot <jqueryapibot@gmail.com>' );
       endif;
+      // DEBUG:
+      // $response['msg'] = ks_spammed($subj, $comment) . $response['msg'];
       // $response['msg'] .= '<pre>' . preg_replace('/\n/', '<br>', $msg) . '</pre>';
     }
   }
 
   return $response;
+}
+
+// check for common hallmarks of spam in API documentation reports
+function ks_spammed($subject, $msg) {
+  $msg = htmlspecialchars($msg);
+  $filtered_msg = filter_var( $msg, FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH );
+
+  $msg_spam = strlen($msg) - strlen($filtered_msg);
+  $subject_spam = $subject == 'SUBJ1' ? 100 : 0;
+
+  $is_spam = $subject_spam + $msg_spam;
+
+  return $is_spam;
 }
 
 function ks_stripslashes_gpc(&$value) {
