@@ -140,7 +140,7 @@ if ($html = $xp->transformToXML($xml_doc)) {
     case 'unsent':
       $preform = '<p>Found a problem with this documentation? <a id="api-error" href="#rpt-issue">Report it</a> to the jQuery API team.</p>';
       $postform = <<<SCRPT
-        <script>jQuery(function($) { $('#rpt-issue').hide();$('#api-error').bind('click',function(e) {e.preventDefault();$('#rpt-issue').slideDown();});});</script>
+        <script>jQuery(function($) { $('#rpt-issue').hide();$('#api-error').bind('click',function(e) {e.preventDefault();$('#rpt-issue').slideDown().find('button').prop('disabled', false);});});</script>
 SCRPT;
       $showform = true;
       break;
@@ -187,7 +187,7 @@ SCRPT;
           <label for="api_comment">Comment:</label>
           <textarea id="api_comment" name="api_comment"><?= ks_field_value('api_comment'); ?></textarea>
         </div>
-        <button type="submit">Report</button>
+        <button type="submit" disabled="disabled">Report</button>
       </fieldset>
     </form>
 
