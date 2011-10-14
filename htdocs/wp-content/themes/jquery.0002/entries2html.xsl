@@ -4,6 +4,8 @@
     <h5 class="option">
       <xsl:value-of select="@name" />
       <xsl:if test="@added"> <span class="added">(added <xsl:value-of select="@added" />)</span></xsl:if>
+      <xsl:if test="@deprecated"> <span class="deprecated">(deprecated <xsl:value-of select="@deprecated" />)</span></xsl:if>
+      <xsl:if test="@removed"> <span class="removed">(removed <xsl:value-of select="@removed" />)</span></xsl:if>
       <span class="type">
         <a href="http://api.jquery.com/Types#{@type}"><xsl:value-of select="@type" /></a>
       </span>
@@ -132,6 +134,12 @@
           <h4 class="name">
             <xsl:if test="./signature/added">
               <span class="versionAdded">version added: <a href="/category/version/{signature/added}/"><xsl:value-of select="signature/added" /></a></span>
+            </xsl:if>
+            <xsl:if test="./signature/deprecated">
+              <span class="version-deprecated">version deprecated: <a href="/category/version/{signature/deprecated}/"><xsl:value-of select="signature/deprecated" /></a></span>
+            </xsl:if>
+            <xsl:if test="./signature/removed">
+              <span class="version-removed">version removed: <a href="/category/version/{signature/removed}/"><xsl:value-of select="signature/removed" /></a></span>
             </xsl:if>
             <xsl:text>jQuery('</xsl:text><xsl:value-of select="sample" /><xsl:text>')</xsl:text>
           </h4>
