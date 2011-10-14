@@ -36,6 +36,7 @@ echo '<?xml version="1.0" ?>';
       <category name="Mouse Events"/>
     </category>
     <category name="Forms"/>
+    <category name="Internals" />
     <category name="Manipulation">
       <category name="Class Attribute"/>
       <category name="Copying"/>
@@ -68,6 +69,7 @@ echo '<?xml version="1.0" ?>';
       <category name="Content Filter"/>
       <category name="Form"/>
       <category name="Hierarchy"/>
+      <category name="jQuery Extensions"/>
       <category name="Visibility Filter"/>
     </category>
     <category name="Traversing">
