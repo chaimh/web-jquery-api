@@ -97,6 +97,7 @@ echo '<?xml version="1.0" ?>';
       <category name="Version 1.5"/>
       <category name="Version 1.5.1"/>
       <category name="Version 1.6"/>
+      <category name="Version 1.7"/>
     </category>
   </categories>
   <?php

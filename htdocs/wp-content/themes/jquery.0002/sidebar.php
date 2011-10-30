@@ -4,7 +4,7 @@
       <ul class="xoxo">
         <li>
           <ul>
-            <li><a href="http://api.jquery.com/category/version/1.6/">New or Changed in 1.6</a></li>
+            <li><a href="http://api.jquery.com/category/version/1.7/">New or Changed in 1.7</a></li>
             <li><a href="http://api.jquery.com/api/" >Raw XML API Dump</a></li>
             <li><a href="http://api.jquery.com/browser/">Dynamic API Browser</a></li>
             <li><a href="http://www.packtpub.com/jquery-1-4-reference-guide/book">jQuery API Book</a></li>
